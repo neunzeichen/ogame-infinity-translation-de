@@ -1,26 +1,27 @@
 /*
  * This file is responsible for performing the logic of replacing
- * all occurrences of each mapped word with its emoji counterpart.
+ * all occurrences of each mapped word
  */
 
-/*global sortedEmojiMap*/
+/*global sortedLangMap*/
 
-// emojiMap.js defines the 'sortedEmojiMap' variable.
+// langMap_de.js defines the 'sortedLangMap' variable.
 // Referenced here to reduce confusion.
-const emojiMap = sortedEmojiMap;
+const langMap = sortedLangMap;
 
 /*
  * For efficiency, create a word --> search RegEx Map too.
  */
 let regexs = new Map();
-for (let word of emojiMap.keys()) {
-  // We want a global, case-insensitive replacement.
+for (let word of langMap.keys()) {
+  // g (global) veranlasst den Javascript-Interpreter, die Operation auf den gesamten String auszudehnen. 
+  // Ansonsten sucht oder ersetzt der Interpreter nur erste Vorkommen des Suchmusters.
   // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
-  regexs.set(word, new RegExp(word, 'gi'));
+  regexs.set(word, new RegExp(word));
 }
 
 /**
- * Substitutes emojis into text nodes.
+ * Substitutes foreign words into text nodes.
  * If the node contains more than just text (ex: it has child nodes),
  * call replaceText() on each of its children.
  *
@@ -43,6 +44,11 @@ function replaceText (node) {
       return;
     }
 
+    // Skip Chat-Bereich
+    if (document.getElementById("chatBar")) {
+      return;
+    }
+
     // Because DOM manipulation is slow, we don't want to keep setting
     // textContent after every replacement. Instead, manipulate a copy of
     // this string outside of the DOM and then perform the manipulation
@@ -50,8 +56,8 @@ function replaceText (node) {
     let content = node.textContent;
 
     // Replace every occurrence of 'word' in 'content' with its emoji.
-    // Use the emojiMap for replacements.
-    for (let [word, emoji] of emojiMap) {
+    // Use the langMap for replacements.
+    for (let [word, emoji] of langMap) {
       // Grab the search regex for this word.
       const regex = regexs.get(word);
 
