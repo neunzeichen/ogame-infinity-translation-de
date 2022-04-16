@@ -1,14 +1,15 @@
 /*
- * This file contains the Map of word --> emoji substitutions.
+ * This file contains the Map of word --> substitutions.
  */
 
-/* exported sortedEmojiMap */
+/* exported langMap_de */
 
 let dictionary = new Map();
 /* dictionary.set(' ', ' '); 
 */
 /*
  * Menü-Überschriften
+   //Zerschießen die Navigation, wenn ersetzt. 
 dictionary.set('Statistics', 'Statistik');
 dictionary.set('Expeditions', 'Expeditionen'); 
 dictionary.set('Overview', 'Übersicht'); 
@@ -58,9 +59,10 @@ dictionary.set('Week', 'Woche');
 dictionary.set('Mines', 'Minen');
 dictionary.set('planet(s)', 'Planet(en)');
 dictionary.set('Flying', 'Flugauslastung');
+dictionary.set('Percentage of fleet currently in flight', 'Prozent der Flotte, die derzeit unterwegs ist');
 dictionary.set('Player', 'Spieler');
 //Test
-dictionary.set('Verkaufe', 'TEST-XXXX-TEST');
+dictionary.set('Versprochen!', 'TEST-XXXX-TEST');
 /*
  * After all the dictionary entries have been set, sort them by length.
  *

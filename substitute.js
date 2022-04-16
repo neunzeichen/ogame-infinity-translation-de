@@ -45,11 +45,8 @@ function replaceText (node) {
     }
 
     // Skip Chat-Bereich
-    // Funktioniet noch nicht
-    if (document.getElementById === 'chatBar') {
-      return;
-    }
-
+    // to be done...
+ 
     // Because DOM manipulation is slow, we don't want to keep setting
     // textContent after every replacement. Instead, manipulate a copy of
     // this string outside of the DOM and then perform the manipulation
