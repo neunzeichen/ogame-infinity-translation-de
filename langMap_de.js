@@ -60,6 +60,7 @@ dictionary.set('planet(s)', 'Planet(en)');
 dictionary.set('Flying', 'Flugauslastung');
 dictionary.set('Player', 'Spieler');
 //Test
+dictionary.set('Verkaufe', 'TEST-XXXX-TEST');
 /*
  * After all the dictionary entries have been set, sort them by length.
  *

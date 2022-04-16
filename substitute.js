@@ -45,7 +45,8 @@ function replaceText (node) {
     }
 
     // Skip Chat-Bereich
-    if (document.getElementById("chatBar")) {
+    // Funktioniet noch nicht
+    if (document.getElementById === 'chatBar') {
       return;
     }
 
