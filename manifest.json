@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": ["*://*.ogame.gameforge.com/game/*"],
-      "js": ["./langMap_de.js", "./substitute.js"],
+      "js": ["./langMap_de.js", "./substitute.js", "./extras.js"],
       "css": ["./alter-css.css"]
     }
   ]

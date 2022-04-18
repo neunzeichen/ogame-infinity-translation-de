@@ -58,7 +58,7 @@ dictionary.set('Day', 'Tag');
 dictionary.set('Week', 'Woche');
 dictionary.set('Mines', 'Minen');
 dictionary.set('planet(s)', 'Planet(en)');
-dictionary.set('Flying', 'Flugauslastung');
+dictionary.set('Flying', 'Flotte unterwegs');
 dictionary.set('Percentage of fleet currently in flight', 'Prozent der Flotte, die derzeit unterwegs ist');
 dictionary.set('Player', 'Spieler');
 //Test
